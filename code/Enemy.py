@@ -18,18 +18,14 @@ class Enemy(Entity):
         self.rect.centerx -= ENTITY_SPEED[self.name]
 
         if self.name=='Enemy3':
-            # Verifica se atinge o topo
             if self.rect.top <= 0:
-                self.direction = 1  # Muda a direção para baixo
+                self.direction = 1
             elif self.rect.bottom >= WIN_HEIGHT:
-                self.direction = -1  # Muda a direção para cima
+                self.direction = -1
 
-            # Move o inimigo
             if self.direction == 1:
-                # Desce duas vezes mais rápido
                 self.rect.centery += ENTITY_SPEED[self.name] * 2
             else:
-                # Move normalmente para cima
                 self.rect.centery -= ENTITY_SPEED[self.name]
 
 
